@@ -1,3 +1,6 @@
+import numpy as np
+import pandas as pd
+
 def gentrends(x, window=1/3.0, charts=True):
     """
     Returns a Pandas dataframe with support and resistance lines.
@@ -7,11 +10,6 @@ def gentrends(x, window=1/3.0, charts=True):
                    will be taken as a percentage of the size of the data
     :param charts: Boolean value saying whether to print chart to screen
     """
-
-    import numpy as np
-    #import pandas.io.data as pd
-    #from pandas_datareader import data
-    import pandas as pd
 
     x = np.array(x)
 
@@ -74,7 +72,6 @@ def segtrends(x, segments=2, charts=True):
     :param charts: Boolean value saying whether to print chart to screen
     """
 
-    import numpy as np
     y = np.array(x)
 
     # Implement trendlines
