@@ -13,6 +13,7 @@ execfile('/path/to/trendy.py')
 or
 ```python
 import trendy
+# trendy.py must be at the same directory
 ```
 
 I am still working on getting this project hosted on the Python Package Index, but for now this at least enables you to start using and gaining familiarity with the algorithms.
@@ -22,8 +23,8 @@ Examples
 Once the files have been imported, you can implement them with simple function calls. Here are some examples.
 ```python
 # Download Apple price history and save adjusted close prices to numpy array
-import pandas.io.data as pd
-x = pd.DataReader("AAPL", "yahoo")['Adj Close']
+from pandas_datareader import data
+x = data.DataReader("AAPL", "yahoo")['Adj Close']
 
 # Make some trendlines
 import trendy
