@@ -9,7 +9,9 @@ def gentrends(x, window=1/3.0, charts=True):
     """
 
     import numpy as np
-    import pandas.io.data as pd
+    #import pandas.io.data as pd
+    #from pandas_datareader import data
+    import pandas as pd
 
     x = np.array(x)
 
@@ -47,8 +49,11 @@ def gentrends(x, window=1/3.0, charts=True):
 
     # OUTPUT
     trends = np.transpose(np.array((x, maxline, minline)))
-    trends = pd.DataFrame(trends, index=np.arange(0, len(x)),
-                          columns=['Data', 'Max Line', 'Min Line'])
+    #trends = data.DataFrame(trends, index=np.arange(0, len(x)),
+    #                      columns=['Data', 'Max Line', 'Min Line'])
+    trends = pd.DataFrame(
+        trends, index=np.arange(0, len(x)), columns=["Data", "Max Line", "Min Line"]
+    )
 
     if charts is True:
         from matplotlib.pyplot import plot, grid, show
